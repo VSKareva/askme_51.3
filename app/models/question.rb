@@ -14,6 +14,7 @@ class Question < ApplicationRecord
   # если задан пустой текст вопроса (поле text пустое), объект не будет сохранен
   # в базу.
   belongs_to :user
+  belongs_to :author, class_name: 'User'
   
   validates :text, length: { maximum: 255 }
 end
